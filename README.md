@@ -4,8 +4,7 @@
 <h3> 👨🏻‍💻 &nbsp;About Me </h3>
 
 - 🤔 &nbsp; Exploring new technologies and developing software solutions and quick hacks.
-- 🎓 &nbsp; Studying Computer Science at University of Evry Paris-Saclay.
-<!--- 💼 &nbsp; -->
+- 🎓 &nbsp; Studying Computer Science at University of Evry Paris-Saclay.<!--- 💼 &nbsp; -->
 - 🌱 &nbsp; Learning more about Fullstack developement, Systems Design and Artificial Intelligence.
 - ✍️ &nbsp; Pursuing Graphic Design and Youtube channel as hobbies/side hustles.
 
