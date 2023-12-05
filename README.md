@@ -46,4 +46,4 @@
 <!--<a href=""><img alt="Email" src="https://img.shields.io/badge/Email--blue?style=flat-square&logo=gmail"></a> -->
 </p>
 
-⭐️ From [AVS1508](https://github.com/AVS1508)
+⭐️ “Computer Science is no more about computers than astronomy is about telescopes.”- Edsger W. Dijkstra
