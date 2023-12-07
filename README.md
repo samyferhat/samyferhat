@@ -30,9 +30,9 @@
 
 <br/>
 
-<a href="https://github.com/samyferh">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=samyferh&theme=buefy&show_icons=true" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=samyferh&theme=buefy&layout=compact" />
+<a href="https://github.com/samyferhat">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=samyferhat&theme=buefy&show_icons=true" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=samyferhat&theme=buefy&layout=compact" />
 </a>
 
 <br/>
