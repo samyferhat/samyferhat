@@ -46,4 +46,6 @@
 <!--<a href=""><img alt="Email" src="https://img.shields.io/badge/Email--blue?style=flat-square&logo=gmail"></a> -->
 </p>
 
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=anuraghazra&repo=github-readme-stats)](https://github.com/anuraghazra/github-readme-stats)
+
 ⭐️ “Computer Science is no more about computers than astronomy is about telescopes.”- Edsger W. Dijkstra
