@@ -46,5 +46,4 @@
 <!--<a href=""><img alt="Email" src="https://img.shields.io/badge/Email--blue?style=flat-square&logo=gmail"></a> -->
 </p>
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=samyferhat&repo=meteo-du-jour-api)]
 ⭐️ “Computer Science is no more about computers than astronomy is about telescopes.”- Edsger W. Dijkstra
