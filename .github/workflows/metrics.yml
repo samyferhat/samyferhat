@@ -45,11 +45,11 @@ jobs:
           plugin_languages: yes
           plugin_languages_indepth: yes
           plugin_languages_analysis_timeout: 15
-          plugin_languages_sections: most-used, recently-used
+          # recently-used retiré : le RecentAnalyzer de lowlighter/metrics plante (TypeError committer undefined)
+          # quand un commit listé dans les events GitHub a été réécrit ou supprimé (force-push, rebase).
+          plugin_languages_sections: most-used
           plugin_languages_details: bytes-size, percentage, lines
           plugin_languages_limit: 8
           plugin_languages_ignored: html, css, scss, makefile, dockerfile, shell
-          plugin_languages_recent_load: 300
-          plugin_languages_recent_days: 90
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
