@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="415" class="">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="540" class="">
   
 
   <defs><style>@font-face {
@@ -33,7 +33,14 @@
         </div>
       </div>
 
-<pre><div class="stdin"><span class="ps1-path">samyferhat@metrics</span>:<span class="ps1-location">~</span># locale</div><div class="stdout"><b>TSX         </b> [####################] 100.00%
+<pre><div class="stdin"><span class="ps1-path">samyferhat@metrics</span>:<span class="ps1-location">~</span># locale</div><div class="stdout"><b>TYPESCRIPT  </b> [########            ] 38.92%
+<b>PYTHON      </b> [#####               ] 23.82%
+<b>GDSCRIPT    </b> [####                ] 17.92%
+<b>DART        </b> [##                  ] 7.81 %
+<b>JAVASCRIPT  </b> [##                  ] 6.47 %
+<b>JAVA        </b> [#                   ] 2.28 %
+<b>PLPGSQL     </b> [#                   ] 2.21 %
+<b>GLSL        </b> [#                   ] 0.58 %
 </div>
 <div class="stdin"><span class="ps1-path">samyferhat@metrics</span>:<span class="ps1-location">~</span># ncal -MB5</div><div class="stdout"><div class="isocalendar">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="margin-top: -130px;" viewBox="0,0 480,170">
