@@ -1,5 +1,12 @@
-# Génère metrics.terminal.svg et metrics.languages.svg avec lowlighter/metrics
-# Prérequis : un secret METRICS_TOKEN (PAT classic, scope "repo" pour inclure les repos privés)
+# Génère TOUS les SVG utilisés par les thèmes de themes/ (voir THEMES.md) avec lowlighter/metrics.
+# Un seul run produit l'ensemble des fichiers : changer de thème (make <theme>) ne demande aucun rerun.
+# Prérequis : un secret METRICS_TOKEN (PAT classic, scope "repo" pour inclure les repos privés).
+#
+#   thème      fichier(s) généré(s) sur main
+#   terminal   metrics.terminal.svg, metrics.languages.svg
+#   neon       metrics.classic-dark.svg
+#   minimal    metrics.classic-light.svg
+#   fun        metrics.classic-color.svg
 name: Metrics
 
 on:
@@ -16,8 +23,9 @@ jobs:
     permissions:
       contents: write
     steps:
+      # ───────────────────────────── thème terminal ─────────────────────────────
       # Carte 1 : session SSH — profil, activité, communauté, repos, lignes de code
-      - name: Terminal overview
+      - name: Terminal overview (metrics.terminal.svg)
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
@@ -30,9 +38,13 @@ jobs:
           plugin_lines: yes
           plugin_lines_sections: base
           plugin_lines_repositories_limit: 4
+          # Ce repo (collaborateur) contient un contributeur dont le compte GitHub a été supprimé
+          # (author null) : le plugin lines plante dessus ("Cannot read properties of null (reading 'login')").
+          plugin_lines_skipped: RomainCabaret/mindstep-back
 
-      # Carte 2 : langages (analyse réelle des commits, repos privés inclus) + calendrier isométrique
-      - name: Languages & calendar
+      # Carte 2 : langages les plus utilisés + calendrier isométrique
+      # (indepth désactivé : l'analyse des commits ne remontait qu'un seul langage à 100 %)
+      - name: Terminal languages & calendar (metrics.languages.svg)
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
@@ -43,13 +55,93 @@ jobs:
           config_timezone: Europe/Paris
           repositories_affiliations: owner, collaborator
           plugin_languages: yes
-          plugin_languages_indepth: yes
-          plugin_languages_analysis_timeout: 15
-          # recently-used retiré : le RecentAnalyzer de lowlighter/metrics plante (TypeError committer undefined)
-          # quand un commit listé dans les events GitHub a été réécrit ou supprimé (force-push, rebase).
           plugin_languages_sections: most-used
-          plugin_languages_details: bytes-size, percentage, lines
+          plugin_languages_details: bytes-size, percentage
           plugin_languages_limit: 8
           plugin_languages_ignored: html, css, scss, makefile, dockerfile, shell
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
+
+      # ─────────────────────────────── thème neon ───────────────────────────────
+      # Classic, palette magenta/cyan sur les langages, calendrier sur un an,
+      # habitudes de commit avec graphiques, activité récente.
+      - name: Classic dark for neon theme (metrics.classic-dark.svg)
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: samyferhat
+          template: classic
+          filename: metrics.classic-dark.svg
+          base: header, activity, community, repositories, metadata
+          config_timezone: Europe/Paris
+          repositories_affiliations: owner, collaborator
+          plugin_languages: yes
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_limit: 6
+          plugin_languages_ignored: html, css, scss, makefile, dockerfile, shell
+          plugin_languages_colors: "0:ff00ff, 1:00ffff, 2:ff2bd6, 3:00d4ff, 4:b026ff, 5:39ff14"
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          plugin_habits_charts_type: graph
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+          plugin_activity_filter: push, pr, issue, release, star
+
+      # ────────────────────────────── thème minimal ─────────────────────────────
+      # Classic en largeur "large", sobre : peu de plugins, pas d'animations.
+      - name: Classic light for minimal theme (metrics.classic-light.svg)
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: samyferhat
+          template: classic
+          filename: metrics.classic-light.svg
+          base: header, activity, community
+          config_display: large
+          config_animations: no
+          config_timezone: Europe/Paris
+          repositories_affiliations: owner, collaborator
+          plugin_languages: yes
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_limit: 6
+          plugin_languages_ignored: html, css, scss, makefile, dockerfile, shell
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+
+      # ──────────────────────────────── thème fun ───────────────────────────────
+      # Classic coloré : langages en arc-en-ciel, achievements, graphiques d'habitudes.
+      - name: Classic color for fun theme (metrics.classic-color.svg)
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: samyferhat
+          template: classic
+          filename: metrics.classic-color.svg
+          base: header, activity, community, repositories
+          config_timezone: Europe/Paris
+          repositories_affiliations: owner, collaborator
+          plugin_languages: yes
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_limit: 8
+          plugin_languages_ignored: html, css, scss, makefile, dockerfile, shell
+          plugin_languages_colors: "0:ff6b6b, 1:ffa94d, 2:ffd43b, 3:51cf66, 4:339af0, 5:845ef7, 6:f06595, 7:22b8cf"
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: C
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: no
+          plugin_habits_charts: yes
+          plugin_habits_charts_type: classic

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="230" viewBox="0 0 900 230" role="img" aria-label="Samy Ferhat">
+  <defs>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff00ff"/>
+      <stop offset="1" stop-color="#00ffff"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117" stop-opacity="1"/>
+      <stop offset="1" stop-color="#0d1117" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="2" fill="#ffffff" fill-opacity="0.035"/>
+    </pattern>
+    <style>
+      .title { font: 900 68px "Arial Black", "Helvetica Neue", Arial, sans-serif; letter-spacing: 10px; }
+      .sub   { font: 600 17px "Courier New", Courier, monospace; letter-spacing: 4px; fill: #00ffff; }
+      .flicker { animation: flicker 5s linear infinite; }
+      @keyframes flicker {
+        0%, 100% { opacity: 1; } 91% { opacity: 1; } 92% { opacity: .35; } 93% { opacity: 1; }
+        96% { opacity: .55; } 97% { opacity: 1; }
+      }
+      .cursor { animation: blink 1s steps(2, start) infinite; }
+      @keyframes blink { to { visibility: hidden; } }
+      .grid { animation: slide 2s linear infinite; }
+      @keyframes slide { from { transform: translateY(0); } to { transform: translateY(20px); } }
+      .beam { stroke-dasharray: 700; stroke-dashoffset: 700; animation: draw 2s ease-out forwards, pulse 2.6s 2s ease-in-out infinite; }
+      @keyframes draw { to { stroke-dashoffset: 0; } }
+      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
+    </style>
+  </defs>
+  <rect width="900" height="230" fill="#0d1117"/>
+  <g class="grid" stroke="#ff00ff" stroke-opacity="0.18" stroke-width="1">
+    <line x1="0" y1="150" x2="900" y2="150"/>
+    <line x1="0" y1="170" x2="900" y2="170"/>
+    <line x1="0" y1="190" x2="900" y2="190"/>
+    <line x1="0" y1="210" x2="900" y2="210"/>
+    <line x1="0" y1="230" x2="900" y2="230"/>
+    <line x1="0" y1="250" x2="900" y2="250"/>
+  </g>
+  <g stroke="#00ffff" stroke-opacity="0.12" stroke-width="1">
+    <line x1="450" y1="140" x2="450" y2="230"/>
+    <line x1="450" y1="140" x2="250" y2="230"/>
+    <line x1="450" y1="140" x2="650" y2="230"/>
+    <line x1="450" y1="140" x2="50" y2="230"/>
+    <line x1="450" y1="140" x2="850" y2="230"/>
+    <line x1="450" y1="140" x2="-150" y2="230"/>
+    <line x1="450" y1="140" x2="1050" y2="230"/>
+  </g>
+  <rect x="0" y="140" width="900" height="60" fill="url(#fade)"/>
+  <rect width="900" height="230" fill="url(#scanlines)"/>
+  <text x="450" y="98" text-anchor="middle" class="title flicker" fill="url(#neon)" filter="url(#glow)">SAMY FERHAT</text>
+  <line class="beam" x1="100" y1="116" x2="800" y2="116" stroke="url(#neon)" stroke-width="2" filter="url(#glow)"/>
+  <text x="450" y="138" text-anchor="middle" class="sub">&gt; computer science student @ paris-saclay<tspan class="cursor">_</tspan></text>
+</svg>

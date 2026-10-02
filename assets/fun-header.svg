@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="210" viewBox="0 0 900 210" role="img" aria-label="Samy Ferhat">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff6b6b">
+        <animate attributeName="stop-color" values="#ff6b6b;#845ef7;#339af0;#ff6b6b" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset=".5" stop-color="#ffd43b">
+        <animate attributeName="stop-color" values="#ffd43b;#51cf66;#ffd43b" dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1" stop-color="#51cf66">
+        <animate attributeName="stop-color" values="#51cf66;#ff6b6b;#845ef7;#51cf66" dur="10s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <style>
+      .l { font: 900 64px "Arial Rounded MT Bold", "Arial Black", "Helvetica Neue", Arial, sans-serif; fill: #ffffff; stroke: #1e1e2e; stroke-width: 4; stroke-linejoin: round; paint-order: stroke fill; animation: bounce 1.4s ease-in-out infinite; }
+      @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+      .sub { font: 800 19px "Helvetica Neue", Arial, sans-serif; fill: #1e1e2e; }
+      .c { animation: float 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-22px) rotate(30deg); } }
+    </style>
+  </defs>
+  <rect width="900" height="210" rx="28" fill="url(#bg)"/>
+  <g>
+    <rect class="c" x="60"  y="40"  width="14" height="14" rx="3" fill="#ffffff" fill-opacity=".85" style="animation-delay:-.3s"/>
+    <circle class="c" cx="130" cy="150" r="8" fill="#1e1e2e" fill-opacity=".6" style="animation-delay:-1.2s"/>
+    <rect class="c" x="800" y="50"  width="16" height="16" rx="4" fill="#ffffff" fill-opacity=".85" style="animation-delay:-2.1s"/>
+    <circle class="c" cx="850" cy="160" r="9" fill="#1e1e2e" fill-opacity=".6" style="animation-delay:-.8s"/>
+    <rect class="c" x="40"  y="150" width="12" height="12" rx="2" fill="#ffffff" fill-opacity=".85" style="animation-delay:-3.1s"/>
+    <circle class="c" cx="770" cy="30"  r="6" fill="#ffffff" fill-opacity=".9" style="animation-delay:-1.7s"/>
+    <rect class="c" x="150" y="30"  width="10" height="10" rx="2" fill="#1e1e2e" fill-opacity=".6" style="animation-delay:-2.6s"/>
+    <circle class="c" cx="720" cy="170" r="7" fill="#ffffff" fill-opacity=".9" style="animation-delay:-.5s"/>
+  </g>
+  <g>
+    <text class="l" x="150" y="108" text-anchor="middle" style="animation-delay:0s">S</text>
+    <text class="l" x="210" y="108" text-anchor="middle" style="animation-delay:.1s">A</text>
+    <text class="l" x="270" y="108" text-anchor="middle" style="animation-delay:.2s">M</text>
+    <text class="l" x="330" y="108" text-anchor="middle" style="animation-delay:.3s">Y</text>
+    <text class="l" x="450" y="108" text-anchor="middle" style="animation-delay:.5s">F</text>
+    <text class="l" x="510" y="108" text-anchor="middle" style="animation-delay:.6s">E</text>
+    <text class="l" x="570" y="108" text-anchor="middle" style="animation-delay:.7s">R</text>
+    <text class="l" x="630" y="108" text-anchor="middle" style="animation-delay:.8s">H</text>
+    <text class="l" x="690" y="108" text-anchor="middle" style="animation-delay:.9s">A</text>
+    <text class="l" x="750" y="108" text-anchor="middle" style="animation-delay:1s">T</text>
+  </g>
+  <text x="450" y="162" text-anchor="middle" class="sub">Computer Science student @ Paris-Saclay  ·  building things that (mostly) work</text>
+</svg>

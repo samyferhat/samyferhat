@@ -1,4 +1,9 @@
-# Génère l'animation du snake qui mange tes contributions (branche "output")
+# Génère les animations du snake qui mange tes contributions (branche "output").
+# Une variante par thème (voir THEMES.md) :
+#   github-snake.svg        palette claire   (terminal en mode clair, minimal)
+#   github-snake-dark.svg   palette sombre   (terminal en mode sombre)
+#   github-snake-neon.svg   magenta / cyan   (neon)
+#   github-snake-fun.svg    arc-en-ciel      (fun)
 name: Snake
 
 on:
@@ -22,6 +27,8 @@ jobs:
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
+            dist/github-snake-neon.svg?color_snake=#ff00ff&color_dots=#161b22,#2b0a4a,#5a189a,#9d4edd,#00ffff
+            dist/github-snake-fun.svg?color_snake=#ff6b6b&color_dots=#ebedf0,#ffd43b,#51cf66,#339af0,#845ef7
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
