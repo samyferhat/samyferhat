@@ -85,15 +85,15 @@ samy@evry:~$ ./snake --eat contributions
 samy@evry:~$ ls ./projects
 ```
 
-<!-- Remplace les 3 blocs ci-dessous par tes vrais repos (nom, description, lien) -->
-
 <div align="center">
 
 | repo | description | stack |
 |:--|:--|:--|
-| [`project-one`](https://github.com/samyferhat/project-one) | une ligne qui donne envie de cliquer | `react` `php` |
-| [`project-two`](https://github.com/samyferhat/project-two) | une ligne qui donne envie de cliquer | `python` |
-| [`project-three`](https://github.com/samyferhat/project-three) | une ligne qui donne envie de cliquer | `c` |
+| [`aeris`](https://github.com/samyferhat/aeris) | Mini simulateur de vol photoréaliste dans le navigateur : Cessna 172 et MiG-29 au-dessus d'un archipel généré avec érosion | `typescript` `three.js` `vite` `glsl` |
+| [`the-legacy-portfolio`](https://github.com/samyferhat/the-legacy-portfolio) | Portfolio 3D animé déployé sur Vercel, avec formulaire de contact | `next.js` `tailwind` `react-three-fiber` `framer-motion` |
+| [`astro-daily-next`](https://github.com/samyferhat/astro-daily-next) | Explorateur de l'image astronomique du jour de la NASA, avec sélecteur de date et traduction FR/EN | `next.js` `typescript` `tailwind` |
+| [`calculateur-demenagement`](https://github.com/samyferhat/calculateur-demenagement) | Estimation du volume d'un déménagement et export du devis en PDF | `react` `jspdf` |
+| [`safari-kids`](https://github.com/samyferhat/safari-kids) | Jeu éducatif pour enfants pour apprendre les animaux, avec synthèse vocale et confettis | `react` `vite` `tailwind` |
 
 </div>
 
