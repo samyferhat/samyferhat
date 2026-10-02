@@ -63,8 +63,8 @@ jobs:
           plugin_isocalendar_duration: half-year
 
       # ─────────────────────────────── thème neon ───────────────────────────────
-      # Classic, palette magenta/cyan sur les langages, calendrier sur un an,
-      # habitudes de commit avec graphiques, activité récente.
+      # Classic : palette magenta/cyan sur les langages, calendrier isométrique sur un an,
+      # suivi des issues/PR, followers.
       - name: Classic dark for neon theme (metrics.classic-dark.svg)
         uses: lowlighter/metrics@latest
         with:
@@ -83,17 +83,12 @@ jobs:
           plugin_languages_colors: "0:ff00ff, 1:00ffff, 2:ff2bd6, 3:00d4ff, 4:b026ff, 5:39ff14"
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
-          plugin_habits_charts_type: graph
-          plugin_activity: yes
-          plugin_activity_limit: 5
-          plugin_activity_days: 14
-          plugin_activity_filter: push, pr, issue, release, star
-
+          plugin_followup: yes
+          plugin_followup_sections: repositories, user
+          plugin_people: yes
+          plugin_people_types: followers
+          plugin_people_limit: 21
+          plugin_people_size: 24
       # ────────────────────────────── thème minimal ─────────────────────────────
       # Classic en largeur "large", sobre : peu de plugins, pas d'animations.
       - name: Classic light for minimal theme (metrics.classic-light.svg)
@@ -117,7 +112,8 @@ jobs:
           plugin_isocalendar_duration: half-year
 
       # ──────────────────────────────── thème fun ───────────────────────────────
-      # Classic coloré : langages en arc-en-ciel, achievements, graphiques d'habitudes.
+      # Classic coloré : langages en arc-en-ciel, calendriers, suivi des issues/PR,
+      # followers et following, derniers repos étoilés.
       - name: Classic color for fun theme (metrics.classic-color.svg)
         uses: lowlighter/metrics@latest
         with:
@@ -136,12 +132,18 @@ jobs:
           plugin_languages_colors: "0:ff6b6b, 1:ffa94d, 2:ffd43b, 3:51cf66, 4:339af0, 5:845ef7, 6:f06595, 7:22b8cf"
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
-          plugin_achievements: yes
-          plugin_achievements_display: compact
-          plugin_achievements_threshold: C
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: no
-          plugin_habits_charts: yes
-          plugin_habits_charts_type: classic
+          plugin_calendar: yes
+          plugin_calendar_limit: 1
+          plugin_followup: yes
+          plugin_followup_sections: repositories
+          plugin_people: yes
+          plugin_people_types: followers, following
+          plugin_people_limit: 28
+          plugin_people_size: 28
+          plugin_stars: yes
+          plugin_stars_limit: 3
+      
+      # Plugins volontairement absents, cassés avec lowlighter/metrics@latest (vérifié le 2026-10-02) :
+      #   - habits et activity : l'API Events de GitHub ne renvoie plus payload.commits sur les PushEvent,
+      #     les deux plugins plantent dessus ("Cannot destructure property 'author'" / "reading 'filter'").
+      #   - achievements : interroge les Projects (classic), supprimés par GitHub (GraphqlResponseError).
