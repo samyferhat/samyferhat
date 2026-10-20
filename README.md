@@ -8,6 +8,7 @@
   <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="34" alt="wave" />
 </h2>
 
+<a href="https://samyferhat.com"><img src="https://img.shields.io/badge/Portfolio-samyferhat.com-FF8A3D?style=for-the-badge&labelColor=0A0F1E" alt="Portfolio : samyferhat.com" /></a>
 <img src="https://img.shields.io/badge/Student-Paris--Saclay-845ef7?style=for-the-badge" alt="student" />
 <img src="https://img.shields.io/badge/Status-Online-51cf66?style=for-the-badge" alt="status" />
 <img src="https://img.shields.io/badge/Mood-Shipping-ffd43b?style=for-the-badge" alt="mood" />
@@ -92,6 +93,9 @@
 
 <div align="center">
 
+<a href="https://samyferhat.com">
+  <img src="https://img.shields.io/badge/Portfolio-samyferhat.com-FF8A3D?style=for-the-badge&labelColor=0A0F1E" alt="Portfolio : samyferhat.com" />
+</a>
 <a href="https://www.linkedin.com/in/samy-ferhat-14ba58253">
   <img src="https://img.shields.io/badge/LinkedIn-samy--ferhat-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
 </a>
